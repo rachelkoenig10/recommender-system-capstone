@@ -11,7 +11,11 @@ This goal of this project is to create collaborative recommender systems, both u
 Using data from http://jmcauley.ucsd.edu/data/amazon/index.html, 278,677 reviews of Clothing, Shoes, and Jewelry from Amazon, I will build a recommender with the goal of generalizing well to other online retailers who are in need of such resources. Since this is unsupervised learning, there is no target variable. I'll use cosine similarity, aiming for a score of 1 or pairwise distance, aiming for a score of 0, as metrics to check similarity between items and users.
 
 I would like to scrape the product features, image and product name from amazon as well, but since the reviews are from 1996 to 2014, many of the items are no longer available on Amazon or have html and/or javascript that is difficult to loop through.  If that fails, I will try to use NLP to examine the reviews themselves to find predictive words that identify the item.  
-I plan to do this with Selenium but haven't gotten it
+I plan to do this with Selenium but haven't gotten it to work yet. 
+
+Alternatively, maybe I could use NLP to find most popular items.
+
+Maybe a flask app to out put suggested items when a user inputs an item #? 
 
 
 
