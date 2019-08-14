@@ -1,5 +1,5 @@
 # recommender-system-capstone
-### _Author: Rachel Koenig_
+ _Author: Rachel Koenig_
 
 ## Problem Statement
 
