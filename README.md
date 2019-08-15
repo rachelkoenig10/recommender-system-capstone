@@ -1,11 +1,6 @@
-<<<<<<< HEAD
 # Recommender System Capstone
 -------
 _Author: Rachel Koenig_
-=======
-# recommender-system-capstone
- _Author: Rachel Koenig_
->>>>>>> dee49dc327aaa8db74ddf1947927aa0555d6fc8b
 
 ## Problem Statement
 
