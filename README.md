@@ -65,4 +65,5 @@ R. He, J. McAuley. Modeling the visual evolution of fashion trends with one-clas
 J. McAuley, C. Targett, J. Shi, A. van den Hengel. Image-based recommendations on styles and substitutes. SIGIR, 2015
 1
 
+dataworld = https://data.world/dilumr/color-names/workspace/file?filename=wikipedia_color_names.csv
 

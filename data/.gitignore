@@ -1,2 +1,4 @@
 *.json
 reviews_and_products.csv
+all_text.csv
+*.csv
