@@ -12,21 +12,21 @@ This goal of this project is to create both content-based and collaborative user
 These recommenders will be built with the intent of generalizing well to online retailers besides Amazon who are in need of such resources. Since this is unsupervised learning, there is no target variable. I'll use cosine similarity, aiming for a score of 1 and pairwise distance, aiming for a score of 0, as metrics to check similarity between items and users.
 
 ## Data Collection
-** insert link to web scraping notebook ** 
+[Web Scraping Notebook](1_amazon-scrape.ipynb)
 
 I was lucky enough to find and download an amazing dataset of 278,677 Amazon reviews and ratings of Clothing, Shoes, and Jewelry from http://jmcauley.ucsd.edu/data/amazon/index.html, but while it was robust in rows it was actually lacking in product details including product name, color, and description. 
 
 Using Selenium Webdriver, I scraped the 23,033 unique Amazon product IDs in the dataset in search of the product names and featuress. Since the reviews were from 1996 to 2014, however, many of the items are no longer available on Amazon or have html and/or javascript that is difficult to determine. After numerous rescrapes and multiple modifications to tag requests, I decided to drop the "unknown" rows leaving me with 15655 usable products' info.
 
 Amazon reviews data dictionary
-|Column|Type|Description|
-|---|---|---|---|
-|reviewerID|object|unique reviewer identification number | 
-|asin|object|unique product identification number| 
-|reviewText|object|written customer review|
-|overall|float|numerical rating 1-5 out of 5 stars|
-|summary|object|short recap of written review|
-|review_date|datetime64|date of review|
+|Column|Type|Description|  
+|---|---|---|---|  
+|reviewerID|object|unique reviewer identification number|   
+|asin|object|unique product identification number|   
+|reviewText|object|written customer review|  
+|overall|float|numerical rating 1-5 out of 5 stars|  
+|summary|object|short recap of written review|  
+|review_date|datetime64|date of review|  
 
 Dropped columns from amazon reviews
 |Column|Type|Description|Reason for drop|
@@ -58,7 +58,7 @@ Remove html and cut off 'Size:' from the size column
 
 Turned these columns in to dummies: departments, demographic, details, category, division, subcategory
 
-After I merge the reviews and product info dfs, I check for nulls and see I have almost 32% missing.  This type of data is Missing At Random and I have to drop it because it doesn't exist and I have no access to accurate information to fill it in. 
+After I merge the reviews and product info dfs, I check for nulls and see I have almost 39% missing.  This type of data is Missing At Random and I have to drop it because it doesn't exist and I have no access to accurate information to fill it in. 
 
 ## Modeling 
 
