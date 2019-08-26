@@ -29,7 +29,7 @@ Raw text data is a wild beast.  The majority of time on this project was spent c
 **Results**  
 The [item-based recommender](1_item-based-recommender.ipynb) was kind of my baseline.  Without any NLP or feature engineering, I used the products(items) as rows, reviewers(users) as columns and ratings out of 5-stars as the values.  Pairwise distance scores were landing between 0.5 and 0.85 which were much closer to 1 than I wanted so the goal was to get below 0.5 on future iterations. 
 
-The final [content-based recommender](6_content-based-recommender.ipynb) returns pairwise distance scores of 0.025 to 0.055. Since there is not correct answer to compare to for this modoel, the only way to check success is by randomly selecting different products, checking that top 10 pairwise distance scores are close to zero and checking that the recommended products make sense. Of the large handful I looked at, I can say that this recommender meets both criteria.  However, it is not perfect and still needs some further exploration of the features before it could be implemented on an ecommerce site. 
+The final [content-based recommender](6_content-based-recommender.ipynb) returns pairwise distance scores of 0.025 to 0.055. Since there is no "correct" answer to compare to for this model, another way to the  check success is by human evaluation, i.e. randomly selecting different products, checking that top 10 pairwise distance scores are close to zero and checking that the recommended products make sense. Of the large handful I looked at, I can say that this recommender meets both criteria.  However, it is not perfect and still needs some further exploration of the features before it could be implemented on an ecommerce site. 
 
 
 
