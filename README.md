@@ -29,7 +29,7 @@ Raw text data is a wild beast.  The majority of time on this project was spent c
 **Results**  
 The [item-based recommender](1_item-based-recommender.ipynb) was kind of my baseline.  Without any NLP or feature engineering, I used the products(items) as rows, reviewers(users) as columns and ratings out of 5-stars as the values.  Pairwise distance scores were landing between 0.5 and 0.85 which were much closer to 1 than I wanted so the goal was to get below 0.5 on future iterations. 
 
-The final [content-based recommender](6_content-based-recommender.ipynb) returns pairwise distance scores of 0.025 to 0.055. Since there is no "correct" answer to compare to for this model, another way to the  check success is by human evaluation, i.e. randomly selecting different products, checking that top 10 pairwise distance scores are close to zero and checking that the recommended products make sense. Of the large handful I looked at, I can say that this recommender meets both criteria.  However, it is not perfect and still needs some further exploration of the features before it could be implemented on an ecommerce site. 
+The final [content-based recommender](6_content-based-recommender.ipynb) returns pairwise distance scores of 0.025 to 0.055. Often times recommender systems' successes are measured by revenue or click-through-rate (CTR).  However, these can be deceiving or inaccurate. Since there is no "correct" answer to compare this model's results to, another way to check success is by human evaluation, i.e. randomly selecting different products, checking that top 10 pairwise distance scores are close to zero and checking that the recommended products make sense. Of the large handful I looked at, I can say that this recommender meets both criteria.  Therefore, I think if my model was implemented on an eCommerce site, it would help consumers navigate the complex world of online shopping!  
 
 
 
@@ -161,6 +161,8 @@ My final interation of the model was to use TfIdfVectorizer on the tokenized nam
 
 I think both the CountVectorizer and TfIdf processes probably need some more digging to confirm if they are accurate and/or overfit.  However, from the current standing, they look satisfactory. 
 
+## Future Iterations  
+I will continue to work on this project and as I do I would like to dive deeper into user/reviewer clustering.  Finding similarities between users' purchases would be useful for a collaborative user-based recommneder.  
 
 citations:
 WWW / SIGIR papers http://jmcauley.ucsd.edu/data/amazon/index.html,
