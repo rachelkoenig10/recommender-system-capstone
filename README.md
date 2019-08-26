@@ -4,7 +4,7 @@ _Author: Rachel Koenig_
 
 -------
 ### Table of Contents
-[Web Scraping Notebook](2_amazon-scrape.ipynb)
+[Web Scraping Notebook](2_amazon-scrape.ipynb)  
 [Data Cleaning & Concatonating Scrapes](3_EDA-and-concatonate-scrapes.ipynb)  
 [Text Data & Merging Reviews with Product Scrapes](4_NLP-merge-reviews-product-scrape.ipynb)   
 [Feature Engineering](5_feature-engineering.ipynb)  
@@ -41,8 +41,10 @@ I was lucky enough to find and download an amazing dataset of 278,677 Amazon rev
 
 Using Selenium Webdriver, I scraped the 23,033 unique Amazon product IDs in the dataset in search of the product names and features. Since the reviews were from 1996 to 2014 however, many of the items are no longer available on Amazon or have html and/or javascript tags that are difficult to determine. After numerous rescrapes and multiple modifications to tag requests, I decided to drop any rows that were still "unknown", leaving me with 15655 usable products' info.
 
-Amazon reviews data dictionary
-| Column     | Type   | Description                        |  
+Amazon reviews data dictionary 
+
+
+| Column     | Type   | Description |     
 |------------|--------|------------------------------------|  
 | reviewerID | object | unique reviewer identification num |  
 | asin       | object | unique product identification num  |    
@@ -52,15 +54,19 @@ Amazon reviews data dictionary
 |review date | datetime | date of review                   |  
 
 
-Dropped columns from amazon reviews
-**Column**|**Type**|**Description**|**Reason for drop**
-:-----:|:-----:|:-----:|:-----:
-reviewerName|object|customer name|too many different formats and not enough unique values, some first name only, some full names, some nicknames
-helpful|object|a list of two numbers, one for how many times review was helpful and the other for how many times it was not|68% of the rows had no helpful votes at all which made the whole column pretty useless
-unixReviewTime|int|time of review in universal time zone|error converting to datetime format
-reviewTime|object|date of review |replaced with date in correct datetime format
+Dropped columns from amazon reviews    
+
+
+|Column       |Type  |Description  |Reason for drop|  
+|-------------|------|-------------|-----|
+reviewerName  |object|customer name|too many different formats and not enough unique values, some first name only, some full names, some nicknames  
+helpful       |object|a list of two numbers, one for how many times review was helpful and the other for how many times it was not| 68% of the rows had no helpful votes at all which made the whole column pretty useless  
+unixReviewTime|int   |time of review in universal time zone|error converting to datetime format  
+reviewTime    |object|date of review |replaced with date in correct datetime format  
  
 Additional columns from scrape 
+
+
 **Column**|**Type**|**Description**
 :-----:|:-----:|:-----:
 category|object|the departments and subdepartments list from the top right of an Amazon product page
@@ -81,18 +87,22 @@ Replace escape characters and white space in Category column
 Split Category column on the '›' symbol, up to 6 times and return them in a new df where each split is a new column   
 Rename each category split column and add it onto the original df  
 
-    **New Category Name**|**Category Column**
-:-----:|:-----:
-department|0th
-demographic|1st
-division|2nd
-category|3rd
-subcategory|4th
-type|5th
-detail type|6th
-Remove special characters from the description column  
-Remove html and strip off brackets from details column  
-Remove html and cut off 'Size:' from the size column   
+
+   |New Category Name|Category Column|
+   |-----------------|---------------|
+   |department       |0th            |
+   |demographic      |1st            |
+   |division         |2nd            |
+   |category         |3rd            |
+   |subcategory      |4th            |
+   |type             |5th            |
+   |detail type      |6th            |
+ 
+ Remove special characters from the description column  
+ 
+ Remove html and strip off brackets from details column  
+ 
+ Remove html and cut off 'Size:' from the size column   
 
 Turned these columns in to dummies: departments, demographic, details, category, division, subcategory
 
