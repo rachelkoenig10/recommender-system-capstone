@@ -42,14 +42,14 @@ I was lucky enough to find and download an amazing dataset of 278,677 Amazon rev
 Using Selenium Webdriver, I scraped the 23,033 unique Amazon product IDs in the dataset in search of the product names and features. Since the reviews were from 1996 to 2014 however, many of the items are no longer available on Amazon or have html and/or javascript tags that are difficult to determine. After numerous rescrapes and multiple modifications to tag requests, I decided to drop any rows that were still "unknown", leaving me with 15655 usable products' info.
 
 Amazon reviews data dictionary
-| Column     | Type   | Description                        |
-|------------|--------|------------------------------------|
-| reviewerID | object | unique reviewer identification num |
-| asin       | object | unique product identification num  |  
-| reviewText | object | written customer review            |
-| overall    | float  | numerical rating 1-5 out of 5 stars|
-| summary    | object | short recap of review              |
-|review date | datetime | date of review                   |
+| Column     | Type   | Description                        |  
+|------------|--------|------------------------------------|  
+| reviewerID | object | unique reviewer identification num |  
+| asin       | object | unique product identification num  |    
+| reviewText | object | written customer review            |  
+| overall    | float  | numerical rating 1-5 out of 5 stars|  
+| summary    | object | short recap of review              |  
+|review date | datetime | date of review                   |  
 
 
 Dropped columns from amazon reviews
