@@ -29,7 +29,7 @@ Raw text data is a wild beast.  The majority of time on this project was spent c
 **Results**  
 The [item-based recommender](1_item-based-recommender.ipynb) was kind of my baseline.  Without any NLP or feature engineering, I used the products(items) as rows, reviewers(users) as columns and ratings out of 5-stars as the values.  Pairwise distance scores were landing between 0.5 and 0.85 which were much closer to 1 than I wanted so the goal was to get below 0.5 on future iterations. 
 
-The final [content-based recommender](6_content-based-recommender.ipynb) returns pairwise distance scores of 0.025 to 0.055. Often times recommender systems' successes are measured by revenue or click-through-rate (CTR).  However, these can be deceiving or inaccurate. Since there is no "correct" answer to compare this model's results to, another way to check success is by human evaluation, i.e. randomly selecting different products, checking that top 10 pairwise distance scores are close to zero and checking that the recommended products make sense. Of the large handful I looked at, I can say that this recommender meets both criteria.  Therefore, I think if my model was implemented on an eCommerce site, it would help consumers navigate the complex world of online shopping!  
+The final [content-based recommender](6_content-based-recommender.ipynb) returns pairwise distance scores of 0.025 to 0.055. Often times recommender systems' successes are measured by revenue or click-through-rate (CTR).  However, these can be deceiving or inaccurate. According to an article on [Quora](https://www.quora.com/How-do-you-measure-and-evaluate-the-quality-of-recommendation-engines), if a recommended item does not bring in more revenue, it is hard to know if that was purely because the customer did not like the recommendation or just because they did't like the price.  CTR is also hard to measure because customers could just be clicking because the recommendation is flashy and attention grabbing but then not actually purchasing still. Since we do not know "correct" answer to compare this model's results to until an item is actually purchased, another way to check success is by human evaluation, i.e. randomly selecting different products, checking that top 10 pairwise distance scores are close to zero and checking that the recommended products make sense. Of the large handful I looked at, I can say that this recommender meets both criteria.  Therefore, I think if my model was implemented on an eCommerce site, it would help consumers navigate the complex world of online shopping!  
 
 
 
@@ -162,7 +162,17 @@ My final interation of the model was to use TfIdfVectorizer on the tokenized nam
 I think both the CountVectorizer and TfIdf processes probably need some more digging to confirm if they are accurate and/or overfit.  However, from the current standing, they look satisfactory. 
 
 ## Future Iterations  
-I will continue to work on this project and as I do I would like to dive deeper into user/reviewer clustering.  Finding similarities between users' purchases would be useful for a collaborative user-based recommneder.  
+I will continue to work on this project and as I do I would like to dive deeper into user/reviewer clustering.  Finding similarities between users' purchases would be useful for a collaborative user-based recommneder. 
+
+Check for overfitting with TfIdf.  
+
+Expand dataset and scrape additional items from Amazon.  
+
+Launch a "human evaluation A/B test" to get other real opinions (besides my own) on the relevance of of the recommendations.  
+
+Try to evaluate using training and testing data.
+
+[Presentation slides](https://docs.google.com/presentation/d/1C-emUHLX-wpJ4-EEIQcAcrnzNi5Rmj_LtY_hMxRMDHE/edit?usp=sharing)
 
 citations:
 WWW / SIGIR papers http://jmcauley.ucsd.edu/data/amazon/index.html,
@@ -171,4 +181,6 @@ J. McAuley, C. Targett, J. Shi, A. van den Hengel. Image-based recommendations o
 1
 
 dataworld = https://data.world/dilumr/color-names/workspace/file?filename=wikipedia_color_names.csv
+
+Quora - https://www.quora.com/How-do-you-measure-and-evaluate-the-quality-of-recommendation-engines
 

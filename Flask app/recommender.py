@@ -1,7 +1,6 @@
 # imports
 import numpy as np
 import pandas as pd
-import pickle
 from flask import Flask, request, render_template, jsonify
 # read in recommender df
 recommender_df = pd.read_csv('../data/tfidf_recommender.csv').set_index('name_x')
